@@ -66,7 +66,7 @@ public final class MongoConfig {
     * PojoCodecProvider.builder().register("br.cesul.model")
     * Assim ele só tenta mapear classes dentro deste pacote
     * */
-    
+
     // Impedir que a classe seja instanciada (é uma classe utilitária)
     private MongoConfig(){}
 }
