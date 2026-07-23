@@ -18,7 +18,7 @@ public class Viagem {
     private String destino;
     private LocalDate dataInicio;
     private LocalDate dataFim;
-    private Double custo;
+    private double custo;
 
     /*
     * O POJO Codec do MongoDB utiliza reflexão para instanciar objetos
