@@ -29,7 +29,7 @@ public class ViagemRepository {
                 .into(new ArrayList<>()); // Converter/cast em uma lista Java
     }
 
-    public double somaCustos() {
+    public double somarCustos() {
         /*
         * 1 - Pegar todas as viagens
         * 2 - somar o campo 'custo' em memória
