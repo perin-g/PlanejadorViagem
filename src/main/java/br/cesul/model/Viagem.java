@@ -1,31 +1,27 @@
 package br.cesul.model;
 
-import jdk.vm.ci.meta.Local;
+
 import org.bson.types.ObjectId;
 
 import java.time.LocalDate;
 
-/*
-* Camada model delimita as entidades que utilizaremos no projeto
-* Espelha bidirecionalmente a estrutura do arquivo no MongoDB e no Java
-* Necessita de
-*   - Construtor sem argumentos
-*   - Getters e Setters públicos,
-* Por exigência do codec do MongoDB
-* */
+//espelha identidade do banco
+//cada model delimita as entidades que utilizaremos no projeto
+//espelha bidirecionalmente a estrutura do arquivo no mongo e no java
+//necessita de : construtor sem argumentos e getter e setter e publicos (por exigencia do codec do mongo)
 public class Viagem {
-    private ObjectId id; //Será gerado pelo MongoDB
+    private ObjectId id; //será gerado pelo mongo
     private String destino;
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private double custo;
 
-    /*
-    * O POJO Codec do MongoDB utiliza reflexão para instanciar objetos
-    * Para isso, ele precisa de um construtor padrão (vazio)
-    * para poder criar o objeto antes de preencher seus campos com os dados do banco
-    * */
-    public Viagem() {}
+    //pq ele exige esse construtor? o POJO codec do mongo utiliza reflexão para instânciar objetos. Para isso,
+    // ele precisa de um construtor padrão vazio para poder criar o objeto, antes de preencher seus campos
+    // com os dados do banco, dessa forma ele faz isso.
+    public Viagem() {
+    }
+
 
     public Viagem(ObjectId id, String destino, LocalDate ini, LocalDate fim, double custo) {
         this.id = id;
@@ -67,11 +63,11 @@ public class Viagem {
         this.dataFim = dataFim;
     }
 
-    public Double getCusto() {
+    public double getCusto() {
         return custo;
     }
 
-    public void setCusto(Double custo) {
+    public void setCusto(double custo) {
         this.custo = custo;
     }
 }
